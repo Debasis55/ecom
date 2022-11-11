@@ -1,0 +1,26 @@
+{% extends 'store/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="vh-100 my-5">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="/media/{{id.product_image}}"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <h3><strong> {{id.product_name}} </strong> </h3>
+            <p class="box-element product"> {{id.product_desc}}</p>
+        <button data-product= {{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">add to cart</button>
+        <a href="{% url 'index' %}" class="btn btn-outline-secondary add-btn update-cart">Go back</a>
+        <h4 style="display:block; float : right;">₹{{product.product_price|floatformat:2}}</h4>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+ 
+
+{% endblock content %}
