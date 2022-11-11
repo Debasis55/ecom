@@ -1,0 +1,18 @@
+{% extends 'store/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    {% for product in products %}
+    <div class="card col-lg-4">
+        <img class="thumbnail my-2 mx-auto" src="/media/{{product.product_image}}" alt="">
+        <div class="box-element product">
+            <h6><strong> {{product.product_name}} </strong> </h6>
+            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">add to cart</button>
+            <a class="btn btn-outline-success" href="#">view</a>
+            <h4 style="display:block; float : right;">₹{{product.product_price|floatformat:2}}</h4>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,3 @@
+user : superuser
+admin name : admin
+password : admin12345
